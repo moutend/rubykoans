@@ -14,8 +14,11 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
-  return :equilateral if a == b && a == c
-  return :isosceles if a == b || a == c || b == c
+  raise TriangleError if a < 1 or b < 1 or c < 1
+  raise TriangleError if a+b <= c or a+c <= b or b+c <= a
+
+  return :equilateral if a == b and a == c
+  return :isosceles if a == b or a == c or b == c
   return :scalene
 
 end
