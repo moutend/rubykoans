@@ -8,7 +8,7 @@ class DiceSet
     @values= []
   end
   def roll(n)
-    @values = Array.new(n).map { (6 * rand).to_i }
+    @values = Array.new(n).map { (6 * rand).to_i  + 1}
   end
 end
 
